@@ -6,6 +6,7 @@ import {
 import { useState } from "react";
 import { defaultExtensions } from "../extensions/defaultExtensions";
 import { defaultEditorContent } from "../lib/defaultContent";
+import { cn } from "../lib/utils";
 
 type RichTextViewerProps = {
     value?: string | null;
@@ -28,7 +29,7 @@ export const RichTextViewer = ({ value, className }: RichTextViewerProps) => {
     if (!initialContent) return null;
 
     return (
-        <div className={"w-full " + (className || "")}>
+        <div className="w-full">
             <EditorRoot>
                 <EditorContent
                     initialContent={initialContent}
@@ -38,7 +39,7 @@ export const RichTextViewer = ({ value, className }: RichTextViewerProps) => {
                         editable: () => false,
                         attributes: {
                             class:
-                                "prose prose-lg dark:prose-invert bg-transparent outline-none",
+                                (cn("prose prose-lg dark:prose-invert bg-transparent outline-none", className)),
                         },
                     }}
                 >

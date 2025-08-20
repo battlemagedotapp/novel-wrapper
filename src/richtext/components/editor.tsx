@@ -23,6 +23,7 @@ import { LinkSelector } from "./selectors/link-selector";
 import { NodeSelector } from "./selectors/node-selector";
 import { TextButtons } from "./selectors/text-buttons";
 import { Separator } from "./ui/separator";
+import { cn } from "../lib/utils";
 
 // Helper function to check if editor content is empty
 const isEditorEmpty = (content: JSONContent): boolean => {
@@ -91,7 +92,7 @@ export const RichTextEditor = ({ value, onChange, className }: RichTextEditorPro
   if (!initialContent) return null;
 
   return (
-    <div className={"w-full " + (className || "")}>
+    <div className="w-full ">
       <p className="text-sm text-muted-foreground mb-2">
         Press <kbd>/</kbd> to open the palette. You can also paste or drop images directly into the editor.
       </p>
@@ -108,7 +109,7 @@ export const RichTextEditor = ({ value, onChange, className }: RichTextEditorPro
             handleDrop: (view, event, _slice, moved) => handleImageDrop(view, event, moved, convexUploadFn),
             attributes: {
               class:
-                "prose prose-lg p-6 dark:prose-invert max-w-full rounded-md border border-input focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 bg-transparent shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px]",
+                (cn("prose prose-lg p-6 dark:prose-invert max-w-full rounded-md border border-input focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 bg-transparent shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px]", className)),
             },
           }}
           onUpdate={({ editor }) => {
