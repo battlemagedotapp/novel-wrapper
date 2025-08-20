@@ -7,7 +7,9 @@ A React wrapper component for the Novel editor with additional rich text functio
 Install directly from GitHub:
 
 ```bash
-npm install git+https://github.com/yourusername/novel-wrapper.git
+npm install github:battlemagedotapp/novel-wrapper
+# or
+npm install git+https://github.com/battlemagedotapp/novel-wrapper.git
 ```
 
 ## Usage
@@ -70,24 +72,6 @@ A read-only component for displaying rich text content.
 
 - `content: string` - HTML content to display
 
-## Peer Dependencies
-
-This package requires the following peer dependencies:
-
-- `react` ^19.1.0
-- `react-dom` ^19.1.0
-- `novel` ^1.0.2
-- `lucide-react` ^0.536.0
-- `clsx` ^2.1.1
-- `tailwind-merge` ^3.3.1
-- `@radix-ui/react-popover` ^1.1.14
-- `@radix-ui/react-separator` ^1.1.7
-- `@radix-ui/react-slot` ^1.2.3
-- `sonner` ^2.0.7
-- `use-debounce` ^10.0.5
-- `class-variance-authority` ^0.7.1
-- `@tailwindcss/typography` ^0.5.16
-
 ## Development
 
 ```bash
@@ -97,7 +81,3 @@ npm install
 # Build the package
 npm run build
 ```
-
-## License
-
-MIT
