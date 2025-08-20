@@ -109,7 +109,7 @@ export const RichTextEditor = ({ value, onChange, className }: RichTextEditorPro
             handleDrop: (view, event, _slice, moved) => handleImageDrop(view, event, moved, convexUploadFn),
             attributes: {
               class:
-                (cn("prose-md p-6 max-w-full rounded-md border border-input focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 bg-transparent shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px]", className)),
+                (cn("p-6 max-w-full rounded-md border border-input focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 bg-transparent shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px]", className)),
             },
           }}
           onUpdate={({ editor }) => {

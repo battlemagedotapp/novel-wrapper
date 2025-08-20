@@ -39,7 +39,7 @@ export const RichTextViewer = ({ value, className }: RichTextViewerProps) => {
                         editable: () => false,
                         attributes: {
                             class:
-                                (cn("prose-md bg-transparent outline-none", className)),
+                                (cn("bg-transparent outline-none", className)),
                         },
                     }}
                 >

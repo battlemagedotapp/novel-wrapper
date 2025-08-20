@@ -919,7 +919,7 @@ var RichTextEditor = ({ value, onChange, className }) => {
   }, 500);
   if (!initialContent)
     return null;
-  return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "w-full " + (className || ""), children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "w-full ", children: [
     /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: "text-sm text-muted-foreground mb-2", children: [
       "Press ",
       /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("kbd", { children: "/" }),
@@ -938,7 +938,7 @@ var RichTextEditor = ({ value, onChange, className }) => {
           handlePaste: (view, event) => (0, import_novel8.handleImagePaste)(view, event, convexUploadFn),
           handleDrop: (view, event, _slice, moved) => (0, import_novel8.handleImageDrop)(view, event, moved, convexUploadFn),
           attributes: {
-            class: "prose prose-lg p-6 dark:prose-invert max-w-full rounded-md border border-input focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 bg-transparent shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px]"
+            class: cn("p-6 max-w-full rounded-md border border-input focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 bg-transparent shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px]", className)
           }
         },
         onUpdate: ({ editor }) => {
@@ -1004,7 +1004,7 @@ var RichTextViewer = ({ value, className }) => {
   const extensions = [...defaultExtensions];
   if (!initialContent)
     return null;
-  return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "w-full " + (className || ""), children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_novel9.EditorRoot, { children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "w-full", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_novel9.EditorRoot, { children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
     import_novel9.EditorContent,
     {
       initialContent,
@@ -1013,7 +1013,7 @@ var RichTextViewer = ({ value, className }) => {
       editorProps: {
         editable: () => false,
         attributes: {
-          class: "prose prose-lg dark:prose-invert bg-transparent outline-none"
+          class: cn("bg-transparent outline-none", className)
         }
       }
     }
