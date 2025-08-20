@@ -46,7 +46,7 @@
     "tsup": "^7.0.0"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean && node -e \"const fs = require('fs'); const path = require('path'); fs.mkdirSync('dist', { recursive: true }); fs.copyFileSync('src/styles.css', 'dist/styles.css'); fs.copyFileSync('src/richtext/components/styles/globals.css', 'dist/globals.css'); fs.copyFileSync('src/richtext/components/styles/prosemirror.css', 'dist/prosemirror.css');\"",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean && node -e \"const fs = require('fs'); const path = require('path'); fs.mkdirSync('dist', { recursive: true }); fs.copyFileSync('src/styles.css', 'dist/styles.css'); fs.mkdirSync('dist/richtext/components/styles', { recursive: true }); fs.copyFileSync('src/richtext/components/styles/globals.css', 'dist/richtext/components/styles/globals.css'); fs.copyFileSync('src/richtext/components/styles/prosemirror.css', 'dist/richtext/components/styles/prosemirror.css');\"",
     "prepare": "npm run build"
   }
 }
