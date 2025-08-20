@@ -1,0 +1,52 @@
+{
+  "name": "novel-wrapper",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": "./dist/styles.css"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/battlemagedotapp/novel-wrapper.git"
+  },
+  "homepage": "https://github.com/battlemagedotapp/novel-wrapper#readme",
+  "bugs": {
+    "url": "https://github.com/battlemagedotapp/novel-wrapper/issues"
+  },
+  "peerDependencies": {
+    "clsx": "^2.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "lucide-react": "^0.536.0",
+    "tailwind-merge": "^3.3.1",
+    "novel": "^1.0.2",
+    "@radix-ui/react-popover": "^1.1.14",
+    "@radix-ui/react-separator": "^1.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "sonner": "^2.0.7",
+    "use-debounce": "^10.0.5",
+    "class-variance-authority": "^0.7.1",
+    "@tailwindcss/typography": "^0.5.16",
+    "convex-file-upload": "github:battlemagedotapp/convex-file-upload"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "typescript": "~5.8.3",
+    "tsup": "^7.0.0"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean && node -e \"const fs = require('fs'); const path = require('path'); fs.mkdirSync('dist', { recursive: true }); fs.copyFileSync('src/styles.css', 'dist/styles.css'); fs.copyFileSync('src/richtext/components/styles/globals.css', 'dist/globals.css'); fs.copyFileSync('src/richtext/components/styles/prosemirror.css', 'dist/prosemirror.css');\"",
+    "prepare": "npm run build"
+  }
+}
